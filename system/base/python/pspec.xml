@@ -1,0 +1,129 @@
+
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>python3</Name>
+        <Homepage>http://www.python.org/</Homepage>
+        <Packager>
+            <Name>PisiLinux Community</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Packager>
+        <License>custom</License>
+        <PartOf>programming.language</PartOf>
+        <Summary>Next generation of the python high-level scripting language</Summary>
+        <Description>Next generation of the python high-level scripting language</Description>
+        <Archive sha1sum="5a7a833a36f1006257d298787f4c38493c5d1689" type="tarxz">https://www.python.org/ftp/python/3.6.5/Python-3.6.5.tar.xz</Archive>
+        <BuildDependencies>
+            <Dependency>bzip2</Dependency>
+            <Dependency>xz-devel</Dependency>
+            <Dependency>gdbm-devel</Dependency>
+            <Dependency>zlib-devel</Dependency>
+            <Dependency>expat-devel</Dependency>
+            <Dependency>libffi-devel</Dependency>
+            <Dependency>sqlite-devel</Dependency>
+            <Dependency>ncurses-devel</Dependency>
+            <Dependency>openssl-devel</Dependency>
+            <Dependency>readline-devel</Dependency>
+            <!--Dependency>tcltk-devel</Dependency-->
+            <!--Dependency>tcl-devel</Dependency-->
+            <!--<Dependency>valgrind</Dependency> -->
+            <!--Dependency>mpdecimal-devel</Dependency-->
+        </BuildDependencies>
+        <Patches>
+            <Patch level="1">dont-make-libpython-readonly.patch</Patch>
+            <!--Patch>pisilinux-to-search-path.patch</Patch-->
+        </Patches>
+    </Source>
+
+    <Package>
+        <Name>python3</Name>
+        <RuntimeDependencies>
+            <Dependency>xz</Dependency>
+            <Dependency>gdbm</Dependency>
+            <Dependency>zlib</Dependency>
+            <Dependency>bzip2</Dependency>
+            <Dependency>expat</Dependency>
+            <Dependency>libffi</Dependency>
+            <Dependency>sqlite</Dependency>
+            <Dependency>ncurses</Dependency>
+            <Dependency>openssl</Dependency>
+            <Dependency>readline</Dependency>
+            <!--Dependency>mpdecimal</Dependency-->
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="executable">/usr/bin/p*</Path>
+            <Path fileType="executable">/usr/bin/2to3*</Path><!--conflict py2-->
+            <Path fileType="library">/usr/lib/python3.*/</Path>
+            <Path fileType="library">/usr/lib/python3.*/lib-dynload/</Path>
+            <Path fileType="library">/usr/lib/*.so</Path>
+            <Path fileType="library">/usr/lib/libpython3.*</Path>
+            <Path fileType="man">/usr/share/man/man1/*</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+        </Files>
+        <Provides>
+            <!--COMAR script="package.py">System.Package</COMAR-->
+            <COMAR script="pakhandler.py">System.PackageHandler</COMAR>
+        </Provides>
+    </Package>
+
+    <Package>
+        <Name>python3-devel</Name>
+        <RuntimeDependencies>
+            <Dependency release="current">python3</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="header">/usr/include/python3.6m/*</Path>
+            <Path fileType="library">/usr/lib/pkgconfig/*</Path>
+        </Files>
+    </Package>
+
+    <!--Package>
+        <Name>python3-tk</Name>
+        <IsA>library</IsA>
+        <PartOf>programming.language.python</PartOf>
+        <Summary>Python modules for Tk</Summary>
+        <RuntimeDependencies>
+            <Dependency release="current">python3</Dependency>
+            <Dependency>tcl</Dependency>
+            <Dependency>tcltk</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="library">/usr/lib/python3*/tkinter</Path>
+            <Path fileType="library">/usr/lib/python3*/lib-dynload/_tkinter.cpython-36m-x86_64-linux-gnu.so</Path>
+            <Path fileType="library">/usr/lib/python3.*/turtledemo</Path>
+        </Files>
+    </Package-->
+
+    <!--Package>
+        <Name>idle3</Name>
+        <Icon>idle</Icon>
+        <IsA>app:gui</IsA>
+        <PartOf>programming.environment</PartOf>
+        <Summary>An Integrated Development Environment for Python</Summary>
+        <RuntimeDependencies>
+            <Dependency>python3-tk</Dependency>
+            <Dependency>python3</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="executable">/usr/bin/idle3*</Path>
+            <Path fileType="library">/usr/lib/python*/idlelib</Path>
+            <Path fileType="data">/usr/share/applications</Path>
+            <Path fileType="data">/usr/share/pixmaps</Path>
+        </Files>
+        <AdditionalFiles>
+            <AdditionalFile permission="0644" target="/usr/share/pixmaps/idle3.png">python-logo.png</AdditionalFile>
+            <AdditionalFile permission="0644" target="/usr/share/applications/idle3.desktop">idle.desktop</AdditionalFile>
+        </AdditionalFiles>
+    </Package-->
+
+    <History>
+        <Update release="1">
+            <Date>2019-07-02</Date>
+            <Version>3.6.5</Version>
+            <Comment>First release</Comment>
+            <Name>Ertuğrul Erata</Name>
+            <Email>ertugrulerata@gmail.com</Email>
+        </Update>
+    </History>
+</PISI>
