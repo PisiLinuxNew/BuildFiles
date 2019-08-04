@@ -3,7 +3,7 @@
 <!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
 <PISI>
     <Source>
-        <Name>python3</Name>
+        <Name>python</Name>
         <Homepage>http://www.python.org/</Homepage>
         <Packager>
             <Name>PisiLinux Community</Name>
@@ -32,12 +32,11 @@
         </BuildDependencies>
         <Patches>
             <Patch level="1">dont-make-libpython-readonly.patch</Patch>
-            <!--Patch>pisilinux-to-search-path.patch</Patch-->
         </Patches>
     </Source>
 
     <Package>
-        <Name>python3</Name>
+        <Name>python</Name>
         <RuntimeDependencies>
             <Dependency>xz</Dependency>
             <Dependency>gdbm</Dependency>
