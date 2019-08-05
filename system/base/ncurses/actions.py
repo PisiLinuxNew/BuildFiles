@@ -76,7 +76,7 @@ def install():
     shelltools.cd(NCURSESW)
     autotools.rawInstall("DESTDIR=%s" % get.installDIR())
     LIB = "/usr/lib32" if get.buildTYPE() == "_emul32" else "/usr/lib"
-    print LIB
+    print(LIB)
     for lib in ["ncurses", "form", "panel", "menu"]:
         shelltools.echo("lib%s.so" % lib, "INPUT(-l%sw)" % lib)
         pisitools.dolib_so("lib%s.so" % lib, destinationDirectory = LIB)
