@@ -10,7 +10,7 @@ from pisi.actionsapi import shelltools
 from pisi.actionsapi import get
 
 def setup():
-    pisitools.dosed("Configure", " $prefix/$libdir/engines ", " /%{_lib}/engines ")
+    # pisitools.dosed("Configure", " $prefix/$libdir/engines ", " /%{_lib}/engines ")
     
     options = " --prefix=/usr \
                 --libdir=lib \
