@@ -18,8 +18,8 @@ def build():
 def install():
     autotools.install("prefix=%s/usr" % get.installDIR())
 
-#    pisitools.dosym("/usr/include/gdbm.h", "/usr/include/gdbm/gdbm.h")
-#    pisitools.dosym("/usr/include/dbm.h", "/usr/include/gdbm/dbm.h")
-#    pisitools.dosym("/usr/include/ndbm.h", "/usr/include/gdbm/ndbm.h")
+    pisitools.dosym("../gdbm.h", "/usr/include/gdbm/gdbm.h")
+    pisitools.dosym("../dbm.h", "/usr/include/gdbm/dbm.h")
+    pisitools.dosym("../ndbm.h", "/usr/include/gdbm/ndbm.h")
 
     pisitools.dodoc("ChangeLog", "NEWS", "README")
