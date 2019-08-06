@@ -1,0 +1,40 @@
+
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>util-macros</Name>
+        <Homepage>http://www.x.org/</Homepage>
+        <Packager>
+            <Name>PisiLinux Community</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Packager>
+        <License>MIT</License>
+        <IsA>library</IsA>
+        <Summary>X.Org X11 Autotools macros</Summary>
+        <Description>X.Org X11 autotools macros are required for building the various packages that comprise the X Window System.</Description>
+        <Archive sha1sum="e8b3a6f2bfde22440fca0974da53da18821a4ee6" type="tarbz2">http://xorg.freedesktop.org/releases/individual/util/util-macros-1.19.2.tar.bz2</Archive>
+        <Patches>
+            <Patch level="1">doc.patch</Patch>
+        </Patches>
+    </Source>
+
+    <Package>
+        <Name>util-macros</Name>
+        <Files>
+            <Path fileType="data">/usr/share/aclocal</Path>
+            <Path fileType="data">/usr/share/pkgconfig</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="1">
+            <Date>2019-08-06</Date>
+            <Version>1.19.2</Version>
+            <Comment>First release</Comment>
+            <Name>Ertuğrul Erata</Name>
+            <Email>ertugrulerata@gmail.com</Email>
+        </Update>
+    </History>
+</PISI>

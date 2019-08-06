@@ -1,0 +1,50 @@
+
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>xorg-proto</Name>
+        <Homepage>http://x.org/</Homepage>
+        <Packager>
+            <Name>PisiLinux Community</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Packager>
+        <License>MIT</License>
+        <IsA>library</IsA>
+        <Summary>X.Org Protocol Headers</Summary>
+        <Description>This package includes the protocol headers needed for X11 development.</Description>
+        <Archive sha1sum="2e4a3db312e1ce81e15515dfcac52ba0aa5a920c" type="tarbz2">mirrors://xorg/individual/proto/xorgproto-2018.4.tar.bz2</Archive>
+        <BuildDependencies>
+            <Dependency>meson</Dependency>
+            <Dependency>util-macros</Dependency>
+            <Dependency>libxslt</Dependency>
+        </BuildDependencies>
+        <Patches>
+<!--             <Patch level="1">docdir.patch</Patch> -->
+        </Patches>
+    </Source>
+
+    <Package>
+        <Name>xorg-proto</Name>
+        <RuntimeDependencies>
+          <!--remove for fix cycle dep-->
+          <!--<Dependency>libXau-devel</Dependency>-->
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="header">/usr/include</Path>
+            <Path fileType="data">/usr/lib/pkgconfig</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+            <Path fileType="man">/usr/share/man/man7/Xprint.7</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="1">
+            <Date>2019-01-06</Date>
+            <Version>2018.4</Version>
+            <Comment>First release</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+    </History>
+</PISI>
