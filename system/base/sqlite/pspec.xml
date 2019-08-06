@@ -1,4 +1,3 @@
-
 <?xml version="1.0" ?>
 <!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
 <PISI>
@@ -13,10 +12,11 @@
         <IsA>library</IsA>
         <Summary>An SQL Database Engine in a C Library</Summary>
         <Description>SQLite is a small C library that implements a self-contained, embeddable, zero-configuration SQL database engine. Supports databases up to 2 terabytes in size.</Description>
-        <Archive sha1sum="5f5750e3f39b7b60394a2fb6ddb2371f848670e6" type="targz">https://sqlite.org/2019/sqlite-autoconf-3270200.tar.gz</Archive>
-        <Archive sha1sum="7b49d59acdfd08be8d098b4fc7e150b3e90e6a9c" type="zip">https://sqlite.org/2019/sqlite-doc-3270200.zip</Archive>
+        <Archive sha1sum="053d8237eb9741b0e297073810668c2611a8e38e" type="targz">https://sqlite.org/2019/sqlite-autoconf-3290000.tar.gz</Archive>
+        <Archive sha1sum="b0f697c557b415cb1d67acb61b40fbad0b012cad" type="zip">https://sqlite.org/2019/sqlite-doc-3290000.zip</Archive>
         <BuildDependencies>
             <Dependency>readline-devel</Dependency>
+            <Dependency>zlib-devel</Dependency>
         </BuildDependencies>
     </Source>
 
@@ -24,6 +24,7 @@
         <Name>sqlite</Name>
         <RuntimeDependencies>
             <Dependency>readline</Dependency>
+            <Dependency>zlib</Dependency>
         </RuntimeDependencies>
         <Files>
             <Path fileType="library">/usr/lib</Path>
@@ -106,11 +107,11 @@
 
     <History>
         <Update release="1">
-            <Date>2019-05-27</Date>
-            <Version>3.27.2</Version>
-            <Comment>First release</Comment>
-            <Name>Mustafa Cinasal</Name>
-            <Email>muscnsl@gmail.com</Email>
+            <Date>2019-08-06</Date>
+            <Version>3.29.0</Version>
+            <Comment>First Release.</Comment>
+            <Name>Ertuğrul Erata</Name>
+            <Email>ertugrulerata@gmail.com</Email>
         </Update>
     </History>
 </PISI>

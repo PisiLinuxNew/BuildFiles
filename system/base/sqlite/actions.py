@@ -56,15 +56,11 @@ def build():
 def install():
     autotools.rawInstall("DESTDIR=%s" % get.installDIR())
 
-    #shelltools.cd("%s/sqlite-autoconf-3110000/tea" % get.workDIR())
-    #autotools.rawInstall("DESTDIR=%s" % get.installDIR())
-
     pisitools.dodoc("README*")
 
-    shelltools.cd("%s/sqlite-doc-3270200" % get.workDIR())
-    shelltools.system("pwd")
+    shelltools.cd("%s/sqlite-doc-3290000" % get.workDIR())
 
-    pisitools.insinto("/usr/share/doc/sqlite", "../sqlite-doc-3270200/*")
+    pisitools.insinto("/usr/share/doc/sqlite", "../sqlite-doc-3290000/*")
 
     # fix permissions and remove obsolete files; https://bugs.archlinux.org/task/24605
     shelltools.system("find %s -type f -perm 755 -exec ls -lha {} \;" % get.installDIR())
