@@ -8,6 +8,8 @@ from pisi.actionsapi import autotools
 from pisi.actionsapi import pisitools
 from pisi.actionsapi import shelltools
 
+PythonVersion = "3.6"
+
 def setup():
     pisitools.flags.add("-fwrapv")
 
@@ -38,14 +40,18 @@ def install():
     pisitools.insinto("/usr/lib/python3.6/Tools","Tools/i18n")
     pisitools.insinto("/usr/lib/python3.6/Tools","Tools/scripts")
 
-    # pisitools.remove("/usr/bin/2to3")
-    # pisitools.remove("/usr/bin/2to3-3.6")
+    #pisitools.remove("/usr/bin/2to3")
+    #pisitools.remove("/usr/bin/2to3-3.6")
 
     # remove tcltk files
     pisitools.remove("/usr/bin/idle3")
     pisitools.remove("/usr/bin/idle3.6")
 
-    for dir in ["/usr/lib/python3.6/tkinter", "/usr/lib/python3.6/idlelib","/usr/lib/python3.6/turtledemo", "/usr/lib/python3.6/test/test_tk*"]:
+    pisitools.dosym("/usr/bin/python%s" % PythonVersion, "/usr/bin/python")
+    pisitools.dosym("/usr/bin/python%s-config" % PythonVersion, "/usr/bin/python-config")
+    pisitools.dosym("/usr/lib/python%s/pdb.py" % PythonVersion, "/usr/bin/pdb")
+
+    for dir in ["/usr/lib/python3.6/tkinter", "/usr/lib/python3.6/idlelib","/usr/lib/python3.6/turtledemo", "/usr/lib/python3.6/test/"]:
         pisitools.removeDir("%s" % dir)
 
     pisitools.dodoc("LICENSE", "README.*")
