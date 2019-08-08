@@ -7,3 +7,4 @@ def postInstall(fromVersion, fromRelease, toVersion, toRelease):
 
 def postRemove():
     pass
+    
