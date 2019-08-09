@@ -1,0 +1,15 @@
+<PISI>
+    <SourceName>PisiLinux</SourceName>
+    <Version>3.0</Version>
+    <Description xml:lang="tr">PisiLinux 3.0 Deposu</Description>
+    <Description xml:lang="en">PisiLinux 3.0 Repository</Description>
+    <Description xml:lang="es">PisiLinux 3.0 Repositorio</Description>
+    <Description xml:lang="nl">PisiLinux 3.0 Opslagplaats</Description>
+    <Type>BuildFiles</Type>
+    <BinaryName>PisiLinux</BinaryName>
+    <Obsoletes>
+           <!--glibc-32bit merge in glibc-->
+           <Package>glibc-32bit</Package>
+           <!-- separeted, replaced packages-->
+      </Obsoletes>
+</PISI>
