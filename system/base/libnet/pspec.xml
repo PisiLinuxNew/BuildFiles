@@ -8,9 +8,9 @@
             <Name>Pisilinux Team</Name>
             <Email>admin@pisilinux.org</Email>
         </Packager>
-        <License>GPLv2</License>
-        <Icon>libnet</Icon>
-        <IsA>app:gui</IsA>
+        <License>BSDv2</License>
+        <License>BSD</License>
+        <IsA>library</IsA>
         <Summary>A library which provides API for commonly used low-level net functions</Summary>
         <Description>A library which provides API for commonly used low-level net functions</Description>
         <Archive sha1sum="4d2564f057a576921ed5e8770052a0844762190f" type="targz">https://sourceforge.net/projects/libnet-dev/files/libnet-1.2-rc3.tar.gz</Archive>
