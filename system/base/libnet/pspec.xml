@@ -1,0 +1,62 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org.tr/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>libnet</Name>
+        <Homepage></Homepage>
+        <Packager>
+            <Name>Pisilinux Team</Name>
+            <Email>admin@pisilinux.org</Email>
+        </Packager>
+        <License>GPLv2</License>
+        <Icon>libnet</Icon>
+        <IsA>app:gui</IsA>
+        <Summary>A library which provides API for commonly used low-level net functions</Summary>
+        <Description>A library which provides API for commonly used low-level net functions</Description>
+        <Archive sha1sum="4d2564f057a576921ed5e8770052a0844762190f" type="targz">https://sourceforge.net/projects/libnet-dev/files/libnet-1.2-rc3.tar.gz</Archive>
+        <BuildDependencies>
+            <Dependency>autoconf</Dependency>
+            <Dependency>automake</Dependency>
+            <Dependency>libtool</Dependency>
+        </BuildDependencies>
+        <Patches>
+            <Patch>libnet-1.2-_SOURCE.patch</Patch>
+            <Patch>libnet-1.2-rc.patch</Patch>
+            <Patch>libnet-1.2-sizeof.patch</Patch>
+            <Patch>libnet-1.2-socklen_t.patch</Patch>
+        </Patches>
+    </Source>
+
+    <Package>
+        <Name>libnet</Name>
+        <RuntimeDependencies>
+            <Dependency>glibc</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="executable">/usr/bin</Path>
+            <Path fileType="library">/usr/lib</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+            <Path fileType="man">/usr/share/man</Path>
+        </Files>
+    </Package>
+    
+    <Package>
+        <Name>libnet-devel</Name>
+        <RuntimeDependencies>
+            <Dependency release="current">libnet</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="header">/usr/include</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="2">
+            <Date>2019-08-15</Date>
+            <Version>1.2_rc3</Version>
+            <Comment>First release</Comment>
+            <Name>Ayhan Yalçınsoy</Name>
+            <Email>ayhanyalcinsoy@pisilinux.org</Email>
+        </Update>
+    </History>
+</PISI>
