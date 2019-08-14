@@ -67,9 +67,9 @@
     </Package>
 
     <Package>
-        <Name>python3-devel</Name>
+        <Name>python-devel</Name>
         <RuntimeDependencies>
-            <Dependency release="current">python3</Dependency>
+            <Dependency release="current">python</Dependency>
         </RuntimeDependencies>
         <Files>
             <Path fileType="header">/usr/include/python3.6m/*</Path>
