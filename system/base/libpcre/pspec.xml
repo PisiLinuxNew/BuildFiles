@@ -1,0 +1,80 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>libpcre</Name>
+        <Homepage>http://www.pcre.org/</Homepage>
+        <Packager>
+            <Name>PisiLinux Community</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Packager>
+        <License>BSD</License>
+        <IsA>library</IsA>
+        <Summary>Perl-compatible regular expression library</Summary>
+        <Description>The PCRE (Perl Compatible Regular Expressions) library is a set of functions that implement regular expression pattern matching using the same syntax and semantics as Perl 5.</Description>
+        <Archive sha1sum="8f36ed69d3e938972fc511c19bfaa0ff27ff1d71" type="targz">https://ftp.pcre.org/pub/pcre/pcre-8.43.tar.gz</Archive>
+        <BuildDependencies>
+            <Dependency>readline-devel</Dependency>
+        </BuildDependencies>
+    </Source>
+
+    <Package>
+        <Name>libpcre</Name>
+        <RuntimeDependencies>
+            <Dependency>libgcc</Dependency>
+            <Dependency>readline</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="library">/usr/lib</Path>
+            <Path fileType="man">/usr/share/man</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+            <Path fileType="executable">/usr/bin</Path>
+        </Files>
+    </Package>
+
+    <Package>
+        <Name>libpcre-devel</Name>
+        <PartOf>system.devel</PartOf>
+        <Summary>Development files for libpcre</Summary>
+        <RuntimeDependencies>
+            <Dependency release="current">libpcre</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="header">/usr/include</Path>
+            <Path fileType="man">/usr/share/man/man3</Path>
+            <Path fileType="data">/usr/lib/pkgconfig</Path>
+            <Path fileType="data">/usr/lib32/pkgconfig</Path>
+            <Path fileType="doc">/usr/share/doc/libpcre/html</Path>
+            <Path fileType="executable">/usr/bin/pcre-config</Path>
+            <Path fileType="man">/usr/share/man/man1/pcre-config.1*</Path>
+            <Path fileType="doc">/usr/share/doc/libpcre/pcre-config.txt</Path>
+        </Files>
+    </Package>
+
+    <Package>
+        <Name>libpcre-32bit</Name>
+        <PartOf>emul32</PartOf>
+        <Summary>32-bit shared libraries for libpcre</Summary>
+        <BuildType>emul32</BuildType>
+        <BuildDependencies>
+            <Dependency>readline-32bit</Dependency>
+        </BuildDependencies>
+        <RuntimeDependencies>
+            <Dependency>libgcc</Dependency>
+            <Dependency release="current">libpcre</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="library">/usr/lib32</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="1">
+            <Date>2019-08-15</Date>
+            <Version>8.43</Version>
+            <Comment>First release</Comment>
+            <Name>Ertuğrul Erata</Name>
+            <Email>ertugrulerata@gmail.com</Email>
+        </Update>
+    </History>
+</PISI>
