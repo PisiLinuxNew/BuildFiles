@@ -12,7 +12,7 @@
         <IsA>library</IsA>
         <Summary>Python setuptools</Summary>
         <Description>python-setuptools is a collection of enhancements to the Python distutils that allow you to more easily build and distribute Python packages, especially ones that have dependencies on other packages.</Description>
-        <Archive sha1sum="3e7d85d14446b8113f38f4375c22d7e70bf0cc95" type="binary">https://github.com/pypa/setuptools/archive/v41.1.0.tar.gz</Archive>
+        <Archive sha1sum="3e7d85d14446b8113f38f4375c22d7e70bf0cc95" type="targz">https://github.com/pypa/setuptools/archive/v41.1.0.tar.gz</Archive>
     </Source>
 
     <Package>
@@ -25,19 +25,12 @@
     </Package>
 
     <History>
-        <Update release="2">
+        <Update release="1">
             <Date>2019-08-15</Date>
             <Version>41.1.0</Version>
-            <Comment>Version bump.</Comment>
+            <Comment>First release</Comment>
             <Name>Ertuğrul Erata</Name>
             <Email>ertugrulerata@gmail.com</Email>
-        </Update>
-        <Update release="1">
-            <Date>2018-08-05</Date>
-            <Version>39.2.0</Version>
-            <Comment>First release</Comment>
-            <Name>Mustafa Cinasl</Name>
-            <Email>muscnsl@gmail.com</Email>
         </Update>
     </History>
 </PISI>
