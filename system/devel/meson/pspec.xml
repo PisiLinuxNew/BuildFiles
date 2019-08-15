@@ -1,0 +1,49 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>meson</Name>
+        <Homepage>http://mesonbuild.com/</Homepage>
+        <Packager>
+            <Name>PisiLinux Community</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Packager>
+        <License>Apache</License>
+        <IsA>app:console</IsA>
+        <Summary>High productivity build system</Summary>
+        <Description>Yüksek verimli üretme sistemi</Description>
+        <Archive sha1sum="69a5c05e6143c3c841334fe50cf6c79d27b777a5" type="targz">https://github.com/mesonbuild/meson/releases/download/0.51.1/meson-0.51.1.tar.gz</Archive>
+        <BuildDependencies>
+            <Dependency>python-devel</Dependency>
+            <Dependency>python-setuptools</Dependency>
+        </BuildDependencies>
+        <Patches>
+<!--             <Patch level="1">fix-tests.patch</Patch> -->
+        </Patches>
+    </Source>
+    <Package>
+        <Name>meson</Name>
+        <RuntimeDependencies>
+            <Dependency>python-setuptools</Dependency>
+            <Dependency>python</Dependency>
+            <Dependency>ninja</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="executable">/usr/bin</Path>
+            <Path fileType="library">/usr/lib</Path>
+            <Path fileType="data">/usr/share</Path>
+            <Path fileType="man">/usr/share/man</Path>
+            <Path fileType="data">/usr/share/vim</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+        </Files>
+    </Package>
+    <History>
+        <Update release="1">
+            <Date>2019-08-15</Date>
+            <Version>0.51.1</Version>
+            <Comment>First release.</Comment>
+            <Name>Ertuğrul Erata</Name>
+            <Email>ertugrulerata@gmail.com</Email>
+        </Update>
+    </History>
+</PISI>
