@@ -25,11 +25,11 @@ def setup():
 def build():
     autotools.make()
 
-#def check():
-#    autotools.make("-C tests check")
-#
-#    if get.buildTYPE() == "emul32":
-#        pass
+def check():
+    if get.buildTYPE() == "emul32":
+        pass
+    else:
+        autotools.make("-C tests check")
 
 def install():
     autotools.rawInstall("DESTDIR=%s" % get.installDIR())
