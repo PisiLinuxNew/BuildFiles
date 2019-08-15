@@ -1,0 +1,42 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>python-magic</Name>
+        <Homepage>https://github.com/ahupp/python-magic</Homepage>
+        <Packager>
+            <Name>PisiLinux Community</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Packager>
+        <License>LGPLv2.1</License>
+        <IsA>library</IsA>
+        <Summary>A python wrapper for libmagic</Summary>
+        <Description>A python wrapper for libmagic.</Description>
+       <Archive sha1sum="5920ccbfce760ed3fbbf354022cfc6d00ba25240" type="targz">https://github.com/ahupp/python-magic/archive/0.4.15.tar.gz</Archive>
+        <BuildDependencies>
+            <Dependency>python-setuptools</Dependency>
+            <Dependency>file</Dependency>
+        </BuildDependencies>
+    </Source>
+
+    <Package>
+        <Name>python-magic</Name>
+        <RuntimeDependencies>
+            <Dependency>file</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="library">/usr/lib</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="1">
+            <Date>2019-08-15</Date>
+            <Version>0.4.15</Version>
+            <Comment>First release</Comment>
+            <Name>Ertuğrul Erata</Name>
+            <Email>ertugrulerata@gmail.com</Email>
+        </Update>
+    </History>
+</PISI>
