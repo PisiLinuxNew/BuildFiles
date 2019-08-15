@@ -1,0 +1,74 @@
+
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>attr</Name>
+        <Homepage>https://savannah.nongnu.org/projects/attr</Homepage>
+        <Packager>
+            <Name>Pisi Linux Admins</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Packager>
+        <License>LGPLv2.1</License>
+        <IsA>app:console</IsA>
+        <IsA>library</IsA>
+        <Summary>Utilities for managing filesystems extended attributes</Summary>
+        <Description>attr contains a set of tools for manipulating extended attributes on filesystem objects, in particular getfattr and setfattr.</Description>
+        <Archive sha1sum="d7c88cb5db51c5e255a511b0a15e832fcdda5b4f" type="targz">http://download.savannah.nongnu.org/releases/attr/attr-2.4.48.tar.gz</Archive>
+    </Source>
+
+    <Package>
+        <Name>attr</Name>
+        <Files>
+            <Path fileType="executable">/bin</Path>
+            <Path fileType="conf">/etc</Path>
+            <Path fileType="library">/lib</Path>
+            <Path fileType="localedata">/usr/share/locale</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+            <Path fileType="man">/usr/share/man</Path>
+        </Files>
+    </Package>
+
+    <Package>
+        <Name>attr-devel</Name>
+        <PartOf>system.devel</PartOf>
+        <Summary>Development files for attr</Summary>
+        <RuntimeDependencies>
+            <Dependency release="current">attr</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="header">/usr/include</Path>
+            <Path fileType="library">/usr/lib/pkgconfig</Path>
+            <Path fileType="library">/usr/lib32/pkgconfig</Path>
+            <Path fileType="man">/usr/share/man/man3</Path>
+        </Files>
+    </Package>
+
+    <Package>
+        <Name>attr-32bit</Name>
+        <PartOf>emul32</PartOf>
+        <Summary>32-bit shared libraries for attr</Summary>
+        <BuildType>emul32</BuildType>
+        <BuildDependencies>
+        </BuildDependencies>
+        <RuntimeDependencies>           
+            <Dependency release="current">attr</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="library">/lib32</Path>
+        </Files>
+        <AdditionalFiles>
+            <AdditionalFile owner="root" permission="0644" target="/usr/include/attr/xattr.h">xattr-shim.h</AdditionalFile>
+        </AdditionalFiles>
+    </Package>
+
+    <History>
+        <Update release="1">
+            <Date>2019-08-15</Date>
+            <Version>2.4.48</Version>
+            <Comment>First release</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+    </History>
+</PISI>
