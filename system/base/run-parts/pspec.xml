@@ -1,0 +1,33 @@
+<PISI>
+    <Source>
+        <Name>run-parts</Name>
+        <Homepage>http://packages.qa.debian.org/d/debianutils.html</Homepage>
+        <Packager>
+            <Name>PisiLinux Community</Name>
+            <Email>osman.erkan@yandex.com</Email>
+        </Packager>
+        <License>GPLv2+</License>
+        <Summary>run scripts or programs in a directory</Summary>
+        <Description>run scripts or programs in a directory</Description>
+        <Archive sha1sum="72e9e3333398e85e5a961d63b7c027078ee9320e" type="tarxz">http://ftp.debian.org/debian/pool/main/d/debianutils/debianutils_4.8.6.3.tar.xz</Archive>
+    </Source>
+    
+    <Package>
+        <Name>run-parts</Name>
+        <Files>
+        	<Path fileType="executable">/usr/bin</Path>
+            <Path fileType="executable">/usr/sbin</Path>
+            <Path fileType="man">/usr/share/man</Path>
+        </Files>
+    </Package>
+    
+    <History>
+        <Update release="1">
+            <Date>2019-08-15</Date>
+            <Version>4.8.6.3</Version>
+            <Comment>First release.</Comment>
+            <Name>Ertuğrul Erata</Name>
+            <Email>ertugrulerata@gmail.com</Email>
+        </Update>
+    </History>
+</PISI>
