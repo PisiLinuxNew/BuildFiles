@@ -1,0 +1,54 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>tar</Name>
+        <Homepage>http://www.gnu.org/software/tar/</Homepage>
+        <Packager>
+            <Name>PisiLinux Community</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Packager>
+        <License>GPLv3+</License>
+        <IsA>app:console</IsA>
+        <Summary>A GNU file archiving program</Summary>
+        <Description>The GNU tar program saves many files together in one archive and can restore individual files (or all of the files) from that archive.</Description>
+        <Archive sha1sum="ad53ec4fa815177ab8dbcaa27a42557295142f94" type="tarxz">http://mirrors.kernel.org/gnu/tar/tar-1.31.tar.xz</Archive>
+        <AdditionalFiles>
+            <AdditionalFile target="doc/tar.1">tar.1</AdditionalFile>
+        </AdditionalFiles>
+        <BuildDependencies>
+            <Dependency>acl-devel</Dependency>
+            <Dependency>gettext</Dependency>
+            <Dependency>texinfo</Dependency>
+            <!--Dependency>gzip</Dependency>
+            <Dependency>bzip2</Dependency>
+            <Dependency>ncompress</Dependency-->
+        </BuildDependencies>
+    </Source>
+
+    <Package>
+        <Name>tar</Name>
+        <RuntimeDependencies>
+            <Dependency>acl</Dependency>
+            <Dependency>glibc</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="executable">/bin</Path>
+            <Path fileType="executable">/sbin</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+            <Path fileType="man">/usr/share/man</Path>
+            <Path fileType="localedata">/usr/share/locale</Path>
+            <Path fileType="info">/usr/share/info</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="1">
+            <Date>2019-08-16</Date>
+            <Version>1.31</Version>
+            <Comment>First release.</Comment>
+            <Name>Ertuğrul Erata</Name>
+            <Email>ertugrulerata@gmail.com</Email>
+        </Update>
+    </History>
+</PISI>

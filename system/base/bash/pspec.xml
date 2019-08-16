@@ -1,0 +1,74 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>bash</Name>
+        <Homepage>http://www.gnu.org/software/bash/bash.html</Homepage>
+        <Packager>
+            <Name>Pisi Linux Admins</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Packager>
+        <License>GPLv2</License>
+        <IsA>app:console</IsA>
+        <Summary>The standard GNU Bourne again shell</Summary>
+        <Description>Bash is the GNU Project's Bourne Again SHell, a complete implementation of the IEEE POSIX and Open Group shell specification with interactive command line editing, csh-like features such as history substitution.</Description>
+        <Archive sha1sum="d116b469b9e6ea5264a74661d3a4c797da7f997b" type="targz">http://ftp.gnu.org/gnu/bash/bash-5.0.tar.gz</Archive>
+        <BuildDependencies>
+            <Dependency>ncurses-devel</Dependency>
+            <Dependency>readline-devel</Dependency>
+        </BuildDependencies>
+        <Patches>
+            <!-- Gentoo Patches -->
+            <Patch>gentoo/bash-5.0-history-append.patch</Patch>
+            <Patch>gentoo/bash-5.0-history-zero-length.patch</Patch>
+            <Patch>gentoo/bash-5.0-syslog-history-extern.patch</Patch>
+        </Patches>
+    </Source>
+
+    <Package>
+        <Name>bash</Name>
+        <RuntimeDependencies>
+            <Dependency>ncurses</Dependency>
+            <Dependency>readline</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="config">/etc</Path>
+            <Path fileType="executable">/bin</Path>
+            <Path fileType="executable">/usr/bin</Path>
+            <Path fileType="library">/usr/lib/bash</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+            <Path fileType="info">/usr/share/info</Path>
+            <Path fileType="man">/usr/share/man</Path>
+            <Path fileType="localedata">/usr/share/locale</Path>
+        </Files>
+        <AdditionalFiles>
+            <AdditionalFile owner="root" permission="0644" target="/etc/bash/bashrc">bashrc</AdditionalFile>
+            <AdditionalFile owner="root" permission="0644" target="/etc/profile.d/command-not-found.sh">command-not-found.sh</AdditionalFile>
+        </AdditionalFiles>
+    </Package>
+
+    <Package>
+        <Name>bash-devel</Name>
+        <PartOf>system.devel</PartOf>
+        <Summary>Development files for bash</Summary>
+        <RuntimeDependencies>
+            <Dependency release="current">bash</Dependency>
+            <Dependency>ncurses-devel</Dependency>
+            <Dependency>readline-devel</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="library">/usr/lib/pkgconfig</Path>
+            <Path fileType="header">/usr/include</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="1">
+            <Date>2019-08-16</Date>
+            <Version>5.0</Version>
+            <Comment>First release</Comment>
+            <Name>Ertuğrul Erata</Name>
+            <Email>ertugrulerata@gmail.com</Email>
+        </Update>
+    </History>
+</PISI>
