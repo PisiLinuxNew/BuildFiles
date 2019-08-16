@@ -1,0 +1,60 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>cracklib</Name>
+        <Homepage>http://www.sourceforge.net/projects/cracklib</Homepage>
+        <Packager>
+            <Name>PisiLinux Community</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Packager>
+        <License>GPLv2</License>
+        <IsA>library</IsA>
+        <Summary>Password Checking Library</Summary>
+        <Description>CrackLib tests passwords to determine whether they match certain security-oriented characteristics, with the purpose of stopping users from choosing passwords that are easy to guess.</Description>
+        <Archive sha1sum="ffe455aba4da8d49fcdbe6964aa35367a7438581" type="targz">https://github.com/cracklib/cracklib/releases/download/v2.9.7/cracklib-2.9.7.tar.gz</Archive>
+        <BuildDependencies>
+            <Dependency>zlib-devel</Dependency>
+            <Dependency>python-devel</Dependency>
+            <!--Dependency>miscfiles</Dependency-->
+        </BuildDependencies>
+    </Source>
+
+    <Package>
+        <Name>cracklib</Name>
+        <RuntimeDependencies>
+            <Dependency>zlib</Dependency>
+            <Dependency>python</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="executable">/lib</Path>
+            <Path fileType="library">/usr/lib</Path>
+            <Path fileType="executable">/usr/sbin</Path>
+            <Path fileType="localedata">/usr/share/locale</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+            <Path fileType="data">/usr/share/cracklib</Path>
+        </Files>
+    </Package>
+
+    <Package>
+        <Name>cracklib-devel</Name>
+        <PartOf>system.devel</PartOf>
+        <Summary>Development files for cracklib</Summary>
+        <RuntimeDependencies>
+            <Dependency release="current">cracklib</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="header">/usr/include</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="1">
+            <Date>2019-08-16</Date>
+            <Version>2.9.7</Version>
+            <Comment>First release</Comment>
+            <Name>Ertuğrul Erata</Name>
+            <Email>ertugrulerata@gmail.com</Email>
+        </Update>
+    </History>
+</PISI>
