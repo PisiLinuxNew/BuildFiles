@@ -1,4 +1,3 @@
-
 <?xml version="1.0" ?>
 <!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
 <PISI>
@@ -13,7 +12,7 @@
         <IsA>library</IsA>
         <Summary>Version 2 of the library to manipulate XML files</Summary>
         <Description>Libxml2 is the XML C parser and toolkit developed for the Gnome project (but usable outside of the Gnome platform).</Description>
-        <Archive sha1sum="66bcefd98a6b7573427cf66f9d3841b59eb5b8c3" type="targz">ftp://xmlsoft.org/libxml2/libxml2-2.9.8.tar.gz</Archive>
+        <Archive sha1sum="96686d1dd9fddf3b35a28b1e2e4bbacac889add3" type="targz">ftp://xmlsoft.org/libxml2/libxml2-2.9.9.tar.gz</Archive>
         <BuildDependencies>
             <Dependency>python-devel</Dependency>
             <Dependency>xz-devel</Dependency>
@@ -89,11 +88,11 @@
 
     <History>
         <Update release="1">
-            <Date>2019-01-24</Date>
-            <Version>2.9.8</Version>
+            <Date>2019-08-17</Date>
+            <Version>2.9.9</Version>
             <Comment>First release</Comment>
-            <Name>Mustafa Cinasal</Name>
-            <Email>muscnsl@gmail.com</Email>
+            <Name>Ertuğrul Erata</Name>
+            <Email>ertugrulerata@gmail.com</Email>
         </Update>
     </History>
 </PISI>
