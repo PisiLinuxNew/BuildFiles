@@ -1,0 +1,73 @@
+
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>libunwind</Name>
+        <Homepage>http://www.nongnu.org/libunwind/</Homepage>
+        <Packager>
+            <Name>PisiLinux Community</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Packager>
+        <License>MIT</License>
+        <IsA>library</IsA>
+        <Summary>Call chain tracer of a program</Summary>
+        <Description>libunwind is a portable and efficient C programming interface (API) to determine the call chain of a program.</Description>
+        <Archive sha1sum="aa04e6a7164aef754415b3b5e9453985741dd99e" type="targz">http://download.savannah.gnu.org/releases/libunwind/libunwind-1.1.tar.gz</Archive>
+        <BuildDependencies>
+            <Dependency>xz-devel</Dependency>
+        </BuildDependencies>
+    </Source>
+
+    <Package>
+        <Name>libunwind</Name>
+        <RuntimeDependencies>
+            <Dependency>xz</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="library">/usr/lib</Path>
+            <Path fileType="doc">/usr/share/doc/libunwind</Path>
+            <Path fileType="man">/usr/share/man</Path>
+            <Path fileType="man">/usr/share/man/man3</Path>
+        </Files>
+    </Package>
+
+    <Package>
+        <Name>libunwind-devel</Name>
+        <Summary>Development files for libunwind</Summary>
+        <RuntimeDependencies>
+            <Dependency release="current">libunwind</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="header">/usr/include</Path>
+            <Path fileType="library">/usr/lib/pkgconfig</Path>
+            <Path fileType="library">/usr/lib32/pkgconfig</Path>
+        </Files>
+    </Package>
+    <Package>
+        <Name>libunwind-32bit</Name>
+        <PartOf>emul32</PartOf>
+        <Summary>32-bit shared libraries for libunwind</Summary>
+        <BuildType>emul32</BuildType>
+        <BuildDependencies>
+            <Dependency>xz-32bit</Dependency>
+        </BuildDependencies>
+        <RuntimeDependencies>
+            <Dependency release="current">libunwind</Dependency>
+            <Dependency>xz-32bit</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="library">/usr/lib32</Path>
+        </Files>
+    </Package>
+    
+    <History>
+        <Update release="1">
+            <Date>2018-11-06</Date>
+            <Version>1.1</Version>
+            <Comment>First release</Comment>
+            <Name>Mustafa Cinasal</Name>
+            <Email>muscnsl@gmail.com</Email>
+        </Update>
+    </History>
+</PISI>
