@@ -63,6 +63,8 @@
         <RuntimeDependencies>
             <Dependency release="current">glib2</Dependency>
             <Dependency>libpcre-devel</Dependency>
+            <Dependency>libffi-devel</Dependency>
+            <Dependency>zlib-devel</Dependency>
         </RuntimeDependencies>
         <Files>
             <Path fileType="executable">/usr/bin/gtester</Path>

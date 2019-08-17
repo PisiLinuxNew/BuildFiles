@@ -10,10 +10,10 @@ from pisi.actionsapi import pisitools
 from pisi.actionsapi import get
 
 def setup():
-    shelltools.makedirs("build-python2")
+    shelltools.makedirs("build-python")
     autotools.autoreconf("-fi")
 
-    shelltools.cd("build-python2")
+    shelltools.cd("build-python")
     shelltools.system("../configure --prefix=/usr \
                        --localstatedir=/var \
                        --disable-api-docs \
@@ -23,15 +23,14 @@ def setup():
     pisitools.dosed("libtool", " -shared ", " -Wl,-O1,--as-needed -shared ")
 
 def build():
-    shelltools.cd("build-python2")
+    shelltools.cd("build-python")
     autotools.make()
 
 def check():
-    #autotools.make("check")
     pass
 
 def install():
     pisitools.dodoc("AUTHORS", "ChangeLog", "NEWS", "README")
 
-    shelltools.cd("build-python2")
+    shelltools.cd("build-python")
     autotools.rawInstall("DESTDIR=%s" % get.installDIR())

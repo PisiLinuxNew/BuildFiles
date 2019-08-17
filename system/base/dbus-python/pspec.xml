@@ -1,4 +1,3 @@
-
 <?xml version="1.0" ?>
 <!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
 <PISI>
@@ -14,10 +13,9 @@
         <IsA>library</IsA>
         <Summary>D-Bus Python bindings</Summary>
         <Description>dbus-python provides a Python module which wraps the D-Bus programming API.</Description>
-        <Archive sha1sum="078a76d760ba649991b0ac0ae2eaeda41c00ca5b" type="targz">https://dbus.freedesktop.org/releases/dbus-python/dbus-python-1.2.4.tar.gz</Archive>
+        <Archive sha1sum="2afa30938207ded2c35b11ea64b1c7eda0fa4314" type="targz">https://dbus.freedesktop.org/releases/dbus-python/dbus-python-1.2.8.tar.gz</Archive>
         <BuildDependencies>
             <Dependency>python-devel</Dependency>
-           <!-- <Dependency>python3</Dependency>-->
             <Dependency>dbus-devel</Dependency>
             <Dependency>dbus-glib-devel</Dependency>
             <Dependency>glib2-devel</Dependency>
@@ -29,9 +27,9 @@
     </Source>
 
     <Package>
-        <Name>dbus-python-common</Name>
+        <Name>dbus-python-devel</Name>
         <PartOf>system.devel</PartOf>
-        <Summary>Common dbus-python files shared between dbus-python and dbus-python3</Summary>
+        <Summary>development files for dbus-python</Summary>
         <RuntimeDependencies>
             <Dependency>dbus-devel</Dependency>
             <Dependency release="current">dbus-python</Dependency>
@@ -52,14 +50,14 @@
             <Dependency>dbus-glib</Dependency>
         </RuntimeDependencies>
         <Files>
-            <Path fileType="library">/usr/lib/python2*</Path>
+            <Path fileType="library">/usr/lib/python*</Path>
         </Files>
     </Package>
 
     <History>
         <Update release="1">
-            <Date>2018-10-31</Date>
-            <Version>1.2.4</Version>
+            <Date>2019-08-18</Date>
+            <Version>1.2.8</Version>
             <Comment>First release</Comment>
             <Name>Ertuğrul Erata</Name>
             <Email>ertugrulerata@gmail.com</Email>
