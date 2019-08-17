@@ -43,7 +43,8 @@
             <Path fileType="library">/usr/lib32/pkgconfig</Path>
         </Files>
     </Package>
-    <Package>
+
+    <!--Package>
         <Name>libunwind-32bit</Name>
         <PartOf>emul32</PartOf>
         <Summary>32-bit shared libraries for libunwind</Summary>
@@ -58,7 +59,7 @@
         <Files>
             <Path fileType="library">/usr/lib32</Path>
         </Files>
-    </Package>
+    </Package-->
     
     <History>
         <Update release="1">
