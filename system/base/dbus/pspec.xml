@@ -31,7 +31,6 @@
             <Dependency>expat</Dependency>
             <Dependency>libcap-ng</Dependency>
             <!--libX11 dbus-x11 paketi ayrılınca buradan silinecek-->
-            <!--<Dependency>libX11</Dependency>-->
         </RuntimeDependencies>
         <Files>
             <Path fileType="config">/etc/dbus-1</Path>
@@ -78,6 +77,7 @@
             <Path fileType="header">/usr/include</Path>
             <Path fileType="data">/usr/lib/pkgconfig</Path>
             <Path fileType="data">/usr/lib32/pkgconfig</Path>
+            <Path fileType="library">/usr/lib/cmake</Path>
             <Path fileType="library">/usr/lib/dbus-1.0/include</Path>
             <Path fileType="man">/usr/share/man/man3</Path>
         </Files>
@@ -100,7 +100,7 @@
 
     <History>
         <Update release="1">
-            <Date>2019-05-11</Date>
+            <Date>2019-08-18</Date>
             <Version>1.12.12</Version>
             <Comment>First release</Comment>
             <Name>Ertuğrul Erata</Name>

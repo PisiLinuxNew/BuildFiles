@@ -11,8 +11,10 @@ from pisi.actionsapi import shelltools
 
 def setup():
     pisitools.dosed("configure.ac", '(AS_AC_EXPAND\(EXPANDED_LOCALSTATEDIR, )"\$localstatedir"\)', r'\1 "")')
+
     for f in ["bus/Makefile.am", "bus/Makefile.in"]:
         pisitools.dosed(f, "\$\(localstatedir\)(\/run\/dbus)", "\\1")
+        
     options = "\
                --disable-selinux \
                --disable-static \
