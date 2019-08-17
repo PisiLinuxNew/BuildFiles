@@ -12,7 +12,7 @@
         <IsA>library</IsA>
         <Summary>A library of handy utility functions</Summary>
         <Description>glib2 is the low-level core library that forms the basis for projects such as GTK+ and GNOME. It provides data structure handling for C, portability wrappers, and interfaces for such runtime functionality as an event loop, threads, dynamic loading, and an object system.</Description>
-        <Archive sha1sum="9499377d09ad52d94b4ab9f38c4040e9dce875e5" type="tarxz">mirrors://gnome/glib/2.58/glib-2.58.3.tar.xz</Archive>
+        <Archive sha1sum="b6b9bd8a9fa5fe68f972614d9bbb98a3e67c444d" type="tarxz">mirrors://gnome/glib/2.60/glib-2.60.6.tar.xz</Archive>
         <BuildDependencies>
             <Dependency versionFrom="8.43">libpcre-devel</Dependency>
             <Dependency>zlib-devel</Dependency>
@@ -22,7 +22,7 @@
             <Dependency>ninja</Dependency>
         </BuildDependencies>
         <Patches>
-            <Patch>glib-2.58.3-skip_warnings-1.patch</Patch>
+            <Patch>glib-2.60.6-skip_warnings-1.patch</Patch>
         </Patches>
     </Source>
 
@@ -91,7 +91,7 @@
         </Files>
     </Package>
 
-    <Package>
+    <!--Package>
         <Name>glib2-32bit</Name>
         <PartOf>emul32</PartOf>
         <Summary>32-bit shared libraries for glib2</Summary>
@@ -101,17 +101,17 @@
             <Dependency>zlib-32bit</Dependency>
             <Dependency>attr-32bit</Dependency>
             <Dependency>libffi-32bit</Dependency>
-            <Dependency>dbus-32bit</Dependency>
             <Dependency>elfutils-32bit</Dependency>
+            <Dependency>dbus-32bit</Dependency>
         </BuildDependencies>
         <RuntimeDependencies>
             <Dependency release="current">glib2</Dependency>
             <Dependency>libpcre-32bit</Dependency>
-            <Dependency>zlib-32bit</Dependency>
             <Dependency>attr-32bit</Dependency>
+            <Dependency>zlib-32bit</Dependency>
             <Dependency>libffi-32bit</Dependency>
-            <Dependency>dbus-32bit</Dependency>
             <Dependency>elfutils-32bit</Dependency>
+            <Dependency>dbus-32bit</Dependency>
         </RuntimeDependencies>
         <Files>
             <Path fileType="executable">/usr/bin/32</Path>
@@ -120,7 +120,7 @@
         <Provides>
             <COMAR script="pakhandler32.py">System.PackageHandler</COMAR>
         </Provides>
-    </Package>
+    </Package-->
 
     <Package>
         <Name>glib2-docs</Name>
@@ -133,9 +133,9 @@
 
     <History>
         <Update release="1">
-            <Date>2019-08-18</Date>
-            <Version>2.58.3</Version>
-            <Comment>First release</Comment>
+            <Date>2019-08-15</Date>
+            <Version>2.60.6</Version>
+             <Comment>First release</Comment>
             <Name>Ertuğrul Erata</Name>
             <Email>ertugrulerata@gmail.com</Email>
         </Update>

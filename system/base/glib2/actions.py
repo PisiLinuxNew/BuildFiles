@@ -21,7 +21,7 @@ def setup():
                      -Dfam=false \
                      -Dsystemtap=false \
                      -Dinstalled_tests=false \
-                     -Dselinux=disabled"
+                     -Dselinux=false"
 
 
     if get.buildTYPE() == "_emul32":
@@ -31,7 +31,6 @@ def setup():
         options += " --libdir=lib32 \
                      --bindir=/usr/_emul32/bin \
                      --sbindir=/usr/_emul32/sbin \
-                     -DG_DISABLE_CAST_CHECKS=true \
                      -Ddtrace=false .."
 
     shelltools.system(options)
