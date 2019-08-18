@@ -9,8 +9,6 @@ from pisi.actionsapi import autotools
 from pisi.actionsapi import shelltools
 from pisi.actionsapi import get
 
-WorkDir="json-c-json-c-0.13.1-20180305"
-
 def setup():
     #autotools.autoreconf("-fi")
     autotools.configure("--disable-static \

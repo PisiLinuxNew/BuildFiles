@@ -7,8 +7,6 @@ from pisi.actionsapi import autotools
 from pisi.actionsapi import get
 from pisi.actionsapi import pisitools
 
-WorkDir="debianutils-4.8.6.3"
-
 def setup():
     autotools.configure("--prefix=/usr")
 
