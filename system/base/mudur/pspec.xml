@@ -1,0 +1,73 @@
+
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>mudur</Name>
+        <Homepage>http://www.pisilinux.org</Homepage>
+        <Packager>
+            <Name>PisiLinux Community</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Packager>
+        <License>GPLv2</License>
+        <IsA>app:console</IsA>
+        <Summary>Pisi Linux boot and initialization system</Summary>
+        <Description>mudur handles mounting of the filesystems, loading of the device drivers, starting of the system services, and other jobs during the Pisi Linux boot and shutdown sequences.</Description>
+        <Archive sha1sum="7d86da68ba862c7c7f67447c94610dd7c5664301" type="targz">https://github.com/ertugerata/mudur/archive/4.4.1a1.tar.gz</Archive>
+        <Patches>
+            <!--Patch>set_file_mode.patch</Patch>
+            <Patch>no_err-no_msg.patch</Patch>
+            <Patch>recreate_dir_if_new_uid_or_gid.patch</Patch>
+            <Patch>boot_option.patch</Patch>
+            <Patch level="1">mount_cgroupfs.patch</Patch-->
+        </Patches>
+    </Source>
+
+    <Package>
+        <Name>mudur</Name>
+        <RuntimeDependencies>
+            <Dependency versionFrom="2.0.3">kbd</Dependency>
+            <Dependency>bash</Dependency>
+            <Dependency>dbus</Dependency>
+            <Dependency>kmod</Dependency>
+            <Dependency>eudev</Dependency>
+            <Dependency>comar</Dependency>
+            <Dependency>procps</Dependency>
+            <Dependency>python</Dependency>
+            <Dependency>rsyslog</Dependency>
+            <Dependency>sysvinit</Dependency>
+            <Dependency>coreutils</Dependency>
+            <Dependency>e2fsprogs</Dependency>
+            <Dependency>net-tools</Dependency>
+            <Dependency>baselayout</Dependency>
+            <Dependency>util-linux</Dependency>
+            <Dependency>wireless-tools</Dependency>
+            <Dependency>pisilinux-python</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="config">/etc/conf.d</Path>
+            <Path fileType="data">/etc/mudur/services</Path>
+            <Path fileType="executable">/etc/init.d</Path>
+            <Path fileType="executable">/sbin</Path>
+            <Path fileType="executable">/bin</Path>
+            <Path fileType="localedata">/usr/share/locale</Path>
+        </Files>
+        <Provides>
+            <COMAR script="pakhandler.py">System.PackageHandler</COMAR>
+            <COMAR script="netfs.py" name="netfs">System.Service</COMAR>
+            <COMAR script="package.py">System.Package</COMAR>
+            <COMAR script="system.py">System.Settings</COMAR>
+            <COMAR script="disk.py">Disk.Manager</COMAR>
+        </Provides>
+    </Package>
+
+    <History>
+        <Update release="1">
+            <Date>2019-08-21</Date>
+            <Version>4.4.1_pre1</Version>
+            <Comment>First release</Comment>
+            <Name>Ertuğrul Erata</Name>
+            <Email>ertugrulerata@gmail.com</Email>
+        </Update>
+    </History>
+</PISI>
