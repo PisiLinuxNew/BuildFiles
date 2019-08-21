@@ -1,0 +1,66 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>coreutils</Name>
+        <Homepage>http://www.gnu.org/software/coreutils/</Homepage>
+        <Packager>
+            <Name>Pisi Linux Admins</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Packager>
+        <License>GPLv3+</License>
+        <IsA>app:console</IsA>
+        <Summary>A set of basic GNU tools commonly used in shell scripts</Summary>
+        <Description>Standard GNU file utilities (chmod, cp, dd, dir, ls...), text utilities (sort, tr, head, wc..), and shell utilities (whoami, who,...)</Description>
+        <Archive sha1sum="bd5d495c162730873a2774acd1c5091fbf0c55a4" type="tarxz">http://ftp.gnu.org/gnu/coreutils/coreutils-8.30.tar.xz</Archive>
+        <BuildDependencies>
+            <Dependency>acl-devel</Dependency>
+            <Dependency>attr-devel</Dependency>
+            <Dependency>perl</Dependency>
+            <Dependency>shadow</Dependency>
+            <Dependency>gettext-devel</Dependency>
+            <Dependency>ncurses-devel</Dependency>
+            <Dependency>gmp-devel</Dependency>
+            <Dependency>libcap-devel</Dependency>
+            <Dependency>texinfo</Dependency>
+        </BuildDependencies>
+        <Patches>
+            <Patch level="1">coreutils-8.30-i18n-1.patch</Patch>
+            <!-- PisiLinux patches -->
+            <Patch level="0">remove_am_silent_rules.patch</Patch>
+<!--             <Patch level="0">add-more-dircolors.patch</Patch> -->
+<!--             <Patch level="1">0001-cp-don-t-reserve-a-device-number.patch</Patch> -->
+        </Patches>
+    </Source>
+
+    <Package>
+        <Name>coreutils</Name>
+        <RuntimeDependencies>
+            <Dependency>acl</Dependency>
+            <Dependency>attr</Dependency>
+            <Dependency>gmp</Dependency>
+            <Dependency>libcap</Dependency>            
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="executable">/bin</Path>
+            <Path fileType="config">/etc</Path>
+            <Path fileType="executable">/usr/bin</Path>
+            <Path fileType="executable">/usr/libexec</Path>
+            <Path fileType="library">/usr/lib</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+            <Path fileType="man">/usr/share/man</Path>
+            <Path fileType="info">/usr/share/info</Path>
+            <Path fileType="localedata">/usr/share/locale</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="1">
+            <Date>2019-08-21</Date>
+            <Version>8.30</Version>
+            <Comment>First release</Comment>
+            <Name>Ertuğrul Erata</Name>
+            <Email>ertugrulerata@gmail.com</Email>
+        </Update>
+    </History>
+</PISI>
