@@ -15,11 +15,6 @@
         <Description>mudur handles mounting of the filesystems, loading of the device drivers, starting of the system services, and other jobs during the Pisi Linux boot and shutdown sequences.</Description>
         <Archive sha1sum="7d86da68ba862c7c7f67447c94610dd7c5664301" type="targz">https://github.com/ertugerata/mudur/archive/4.4.1a1.tar.gz</Archive>
         <Patches>
-            <!--Patch>set_file_mode.patch</Patch>
-            <Patch>no_err-no_msg.patch</Patch>
-            <Patch>recreate_dir_if_new_uid_or_gid.patch</Patch>
-            <Patch>boot_option.patch</Patch>
-            <Patch level="1">mount_cgroupfs.patch</Patch-->
         </Patches>
     </Source>
 
