@@ -30,5 +30,5 @@ def install():
     pisitools.insinto("/etc/pisi", "pisi.conf-%s" % get.ARCH(), "pisi.conf")
 
     # we need it teporary
-    pisitools.dodir("/usr/lib/pardus")
-    pisitools.dosym("/usr/lib/pisilinux/pisi", "/usr/lib/pardus/pisi")
+    # pisitools.dodir("/usr/lib/pardus")
+    # pisitools.dosym("/usr/lib/pisilinux/pisi", "/usr/lib/pardus/pisi")
