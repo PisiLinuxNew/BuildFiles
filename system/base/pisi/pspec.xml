@@ -46,7 +46,6 @@
             <Dependency>comar</Dependency>
             <Dependency>python</Dependency>
             <Dependency>gettext</Dependency>
-            <Dependency versionFrom="1.18">leveldb</Dependency>
             <Dependency>piksemel</Dependency>
             <Dependency>comar-api</Dependency>
             <!--<Dependency>diffutils</Dependency>
