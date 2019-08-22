@@ -13,12 +13,10 @@ from pisi.actionsapi import perlmodules
 KeepSpecial=["perl"]
 
 def setup():
-    # use system zlib
-    shelltools.unlinkDir("cpan/Compress-Raw-Zlib/zlib-src")
-    pisitools.dosed("MANIFEST", "zlib-src", deleteLine=True)
-    pisitools.dosed("cpan/Compress-Raw-Zlib/config.in", "(BUILD_ZLIB\s+=\s)True", r"\1False")
-    pisitools.dosed("cpan/Compress-Raw-Zlib/config.in", "(INCLUDE\s+=\s)\.\/zlib-src", r"\1/usr/include")
-    pisitools.dosed("cpan/Compress-Raw-Zlib/config.in", "(LIB\s+=\s)\.\/zlib-src", r"\1/usr/lib")
+    # use library installed in system
+    shelltools.export("BUILD_ZLIB","False")
+    shelltools.export("BUILD_BZIP2","0")
+
 
     shelltools.export("LC_ALL", "C")
 
@@ -78,10 +76,10 @@ def build():
 def install():
     autotools.rawInstall("DESTDIR=%s" % get.installDIR())
 
-    pisitools.remove("/usr/bin/perl")
     # Conflicts with perl-Module-Build
     # pisitools.remove("/usr/bin/config_data")
 
+    pisitools.remove("/usr/bin/perl")
     pisitools.dosym("/usr/bin/perl%s" % get.srcVERSION(), "/usr/bin/perl")
 
     # Perl5 library
