@@ -1,0 +1,42 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>diffutils</Name>
+        <Homepage>http://www.gnu.org/software/diffutils/diffutils.html</Homepage>
+        <Packager>
+            <Name>PisiLinux Community</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Packager>
+        <License>GPLv2</License>
+        <IsA>app:console</IsA>
+        <Summary>Tools to make diffs and compare files</Summary>
+        <Description>You can use the diff command to show differences between two files, or each corresponding file in two directories. diff outputs differences between files line by line in any of several formats, selectable by command line options.</Description>
+        <Archive sha1sum="ad4e0a05ee2e7f5529db6cb84474f45e086e609b" type="tarxz">http://ftp.gnu.org/gnu/diffutils/diffutils-3.7.tar.xz</Archive>
+        <BuildDependencies>
+            <Dependency>patch</Dependency>
+            <Dependency>texinfo</Dependency>
+        </BuildDependencies>
+    </Source>
+
+    <Package>
+        <Name>diffutils</Name>
+        <Files>
+            <Path fileType="executable">/usr/bin</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+            <Path fileType="man">/usr/share/man</Path>
+            <Path fileType="info">/usr/share/info</Path>
+            <Path fileType="localedata">/usr/share/locale</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="1">
+            <Date>2019-08-24</Date>
+            <Version>3.7</Version>
+            <Comment>First release</Comment>
+            <Name>Ertuğrul Erata</Name>
+            <Email>ertugrulerata@gmail.com</Email>
+        </Update>
+    </History>
+</PISI>
