@@ -19,16 +19,4 @@ def install():
 
     pisitools.dosym("pisi-cli", "/usr/bin/pisi")
 
-    #shelltools.touch("LOCK")
-    #shelltools.chmod("LOCK", 0o666)
-    #pisitools.dodir("/run/lock/files.ldb")
-    #pisitools.insinto("/run/lock/files.ldb", "LOCK")
-    #pisitools.dodir("/var/lib/pisi/info/files.ldb")
-    #pisitools.dosym("/run/lock/files.ldb/LOCK", "/var/lib/pisi/info/files.ldb/LOCK")
-
-
     pisitools.insinto("/etc/pisi", "pisi.conf-%s" % get.ARCH(), "pisi.conf")
-
-    # we need it teporary
-    # pisitools.dodir("/usr/lib/pardus")
-    # pisitools.dosym("/usr/lib/pisilinux/pisi", "/usr/lib/pardus/pisi")
