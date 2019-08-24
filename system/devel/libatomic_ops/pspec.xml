@@ -1,0 +1,49 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>libatomic_ops</Name>
+        <Homepage>https://github.com/ivmai/libatomic_ops/</Homepage>
+        <Packager>
+            <Name>Pisi Linux Admins</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Packager>
+        <License>GPLv2</License>
+        <License>MIT</License>
+        <IsA>library</IsA>
+        <Summary>Atomic memory update operations library</Summary>
+        <Description>libatomic_ops provides implementations for atomic memory update operations on a number of architectures. This allows direct use of these in reasonably portable code.</Description>
+        <Archive sha1sum="ad1c9cd6cc22e042a784e34baa360874083e5f60" type="targz">http://www.ivmaisoft.com/_bin/atomic_ops/libatomic_ops-7.6.10.tar.gz</Archive>
+        <!-- look gc package version before version bump -->
+    </Source>
+
+    <Package>
+        <Name>libatomic_ops</Name>
+        <Files>
+            <Path fileType="library">/usr/lib</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+        </Files>
+    </Package>
+
+    <Package>
+        <Name>libatomic_ops-devel</Name>
+        <Summary>libatomic_ops için geliştirme dosyaları</Summary>
+        <RuntimeDependencies>
+            <Dependency release="current">libatomic_ops</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="header">/usr/include</Path>
+            <Path fileType="data">/usr/lib/pkgconfig</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="1">
+            <Date>2019-08-25</Date>
+            <Version>7.6.10</Version>
+            <Comment>First release</Comment>
+            <Name>Ertuğrul Erata</Name>
+            <Email>ertugrulerata@gmail.com</Email>
+        </Update>
+    </History>
+</PISI>
