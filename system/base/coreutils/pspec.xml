@@ -18,7 +18,6 @@
             <Dependency>attr-devel</Dependency>
             <Dependency>perl</Dependency>
             <Dependency>shadow</Dependency>
-            <Dependency>gettext-devel</Dependency>
             <Dependency>ncurses-devel</Dependency>
             <Dependency>gmp-devel</Dependency>
             <Dependency>libcap-devel</Dependency>
@@ -28,8 +27,6 @@
             <Patch level="1">coreutils-8.30-i18n-1.patch</Patch>
             <!-- PisiLinux patches -->
             <Patch level="0">remove_am_silent_rules.patch</Patch>
-<!--             <Patch level="0">add-more-dircolors.patch</Patch> -->
-<!--             <Patch level="1">0001-cp-don-t-reserve-a-device-number.patch</Patch> -->
         </Patches>
     </Source>
 
