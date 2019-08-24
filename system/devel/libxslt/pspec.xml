@@ -1,4 +1,3 @@
-
 <?xml version="1.0" ?>
 <!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
 <PISI>
@@ -13,10 +12,10 @@
         <IsA>library</IsA>
         <Summary>XSLT libraries and tools</Summary>
         <Description>Libxslt is the XSLT C library developed for the GNOME project. XSLT itself is a an XML language to define transformation for XML.</Description>
-        <Archive sha1sum="c47969f16747a72f9095b6a7a56d3afdd1e6e9ac" type="targz">ftp://ftp.xmlsoft.org/libxml2/libxslt-1.1.32.tar.gz</Archive>
+        <Archive sha1sum="7dcda921d9d3d3325449dae5cf84dbb102d26928" type="targz">ftp://ftp.xmlsoft.org/libxml2/libxslt-1.1.33.tar.gz</Archive>
         <BuildDependencies>
             <Dependency versionFrom="2.9.8">libxml2-devel</Dependency>
-            <Dependency>libgcrypt-devel</Dependency>
+            <!--Dependency>libgcrypt-devel</Dependency--><!--optional-->
         </BuildDependencies>
     </Source>
 
@@ -48,7 +47,6 @@
     <Package>
         <Name>libxslt</Name>
         <RuntimeDependencies>
-            <Dependency>libgcrypt</Dependency>
             <Dependency>libxml2</Dependency>
         </RuntimeDependencies>
         <Files>
@@ -65,13 +63,12 @@
         <BuildType>emul32</BuildType>
         <BuildDependencies>
             <Dependency>libxml2-32bit</Dependency>
-            <Dependency>libgcrypt-32bit</Dependency>
+            <!--Dependency>libgcrypt-32bit</Dependency-->
         </BuildDependencies>
         <RuntimeDependencies>
             <Dependency release="current">libxslt</Dependency>
             <Dependency>libxml2-32bit</Dependency>
-            <Dependency>libgcrypt-32bit</Dependency>
-            
+            <!--Dependency>libgcrypt-32bit</Dependency-->
         </RuntimeDependencies>
         <Files>
             <Path fileType="library">/usr/lib32</Path>
@@ -80,11 +77,11 @@
 
     <History>
         <Update release="1">
-            <Date>2019-01-22</Date>
-            <Version>1.1.32</Version>
-            <Comment>First release</Comment>
-            <Name>Mustafa Cinasal</Name>
-            <Email>muscnsl@gmail.com</Email>
+            <Date>2019-08-24</Date>
+            <Version>1.1.33</Version>
+            <Comment>Version bump.</Comment>
+            <Name>Ertuğrul Erata</Name>
+            <Email>ertugrulerata@gmail.com</Email>
         </Update>
     </History>
 </PISI>

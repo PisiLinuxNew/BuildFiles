@@ -12,10 +12,10 @@ from pisi.actionsapi import pisitools
 Libdir = "/usr/lib32" if get.buildTYPE() == "emul32" else "/usr/lib"
 
 def setup():
-    python = "--without-python" if get.buildTYPE() == "emul32" else "--with-python=/usr/bin/python2.7 "
+    python = "--without-python" if get.buildTYPE() == "emul32" else "--with-python=/usr/bin/python3.6 "
+
     # don't remove --with-debugger as it is needed for reverse dependencies
     autotools.configure("%s \
-                         --with-crypto \
                          --with-debugger \
                          --disable-static \
                          --includedir=/usr/include \
