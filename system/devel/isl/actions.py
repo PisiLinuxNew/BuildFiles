@@ -21,6 +21,6 @@ def check():
 def install():
     autotools.rawInstall("DESTDIR=%s" % get.installDIR())
     
-    pisitools.domove("/usr/lib/libisl.so.21.0.0-gdb.py", "/usr/share/gdb/auto-load")
+    #pisitools.domove("/usr/lib/libisl.so.21.0.0-gdb.py", "/usr/share/gdb/auto-load")
 
     pisitools.dodoc("AUTHORS","ChangeLog","doc/manual.pdf")
