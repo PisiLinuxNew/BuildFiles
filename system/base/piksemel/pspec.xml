@@ -1,0 +1,45 @@
+
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>piksemel</Name>
+        <Homepage>http://pisilinux.org</Homepage>
+        <Packager>
+            <Name>PisiLinux Community</Name>
+            <Email>admins@pisilinux.org</Email>
+        </Packager>
+        <License>GPLv2</License>
+        <IsA>library</IsA>
+        <Summary>Python binding for iksemel</Summary>
+        <Description>A simple, fast, small and robust XML parser for Python, based on iksemel.</Description>
+        <Archive sha1sum="88ae67d156e42277e4a3c85054019a88b7aa8f3d" type="targz">https://github.com/ertugerata/piksemel/archive/2.0a1.tar.gz</Archive>
+        <BuildDependencies>
+            <Dependency>python-devel</Dependency>
+        </BuildDependencies>
+        <!--Patches>
+            <Patch>symbol-visibility.patch</Patch>
+        </Patches-->
+    </Source>
+
+    <Package>
+        <Name>piksemel</Name>
+        <RuntimeDependencies>
+            <Dependency>python</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="library">/usr/lib</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="1">
+            <Date>2019-08-21</Date>
+            <Version>2.0_pre1</Version>
+            <Comment>First release</Comment>
+            <Name>Ertuğrul Erata</Name>
+            <Email>ertugrulerata@gmail.com</Email>
+        </Update>
+    </History>
+</PISI>
