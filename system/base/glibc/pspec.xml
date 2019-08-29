@@ -14,7 +14,7 @@
         <IsA>library</IsA>
         <Summary>GNU libc6 (also called glibc2) C library</Summary>
         <Description>The GNU C library is used as the C library in the GNU system and most systems with the Linux kernel. It defines the system calls and other basic C programming language facilities.</Description>
-        <Archive sha1sum="1f7a9c43026484943ef7cf6885f2176a2bc1e093" type="tarxz">http://ftp.gnu.org/gnu/libc/glibc-2.27.tar.xz</Archive>
+        <Archive sha1sum="c8376086203fa5e39dc869235ab8a400ed747c44" type="tarxz">http://ftp.gnu.org/gnu/libc/glibc-2.29.tar.xz</Archive>
         <BuildDependencies>
             <Dependency>kernel-headers</Dependency>
             <Dependency>gettext</Dependency>
@@ -22,8 +22,10 @@
             <Dependency>binutils</Dependency>
         </BuildDependencies>
         <Patches>
-            <Patch>locale-no-archive.patch</Patch>
+            <Patch>glibc-2.29-fhs-1.patch</Patch>
             <Patch>bz20338.patch</Patch>
+            <Patch>0001-Revert-elf-Correct-absolute-SHN_ABS-symbol-run-time-.patch</Patch>
+            <Patch>file-truncated-while-reading-soname-after-patchelf.patch</Patch>
         </Patches>
     </Source>
     <Package>
@@ -1954,8 +1956,8 @@
 
     <History>
         <Update release="1">
-            <Date>2019-08-26</Date>
-            <Version>2.27</Version>
+            <Date>2019-08-28</Date>
+            <Version>2.29</Version>
             <Comment>First release</Comment>
             <Name>Ertuğrul Erata</Name>
             <Email>ertugrulerata@gmail.com</Email>

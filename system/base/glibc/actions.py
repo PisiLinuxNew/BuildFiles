@@ -11,10 +11,12 @@ from pisi.actionsapi import get
 
 import os
 
-WorkDir = "glibc-2.27"
+WorkDir = "glibc-2.29"
 
 arch = "x86-64" if get.ARCH() == "x86_64" and not get.buildTYPE() == "emul32" else "i686"
+
 defaultflags = "-O3 -g -fasynchronous-unwind-tables -mtune=generic -march=%s" % arch
+
 if get.buildTYPE() == "emul32": defaultflags += " -m32"
 # this is getting ridiculous, also gdb3 breaks resulting binary
 #sysflags = "-mtune=generic -march=x86-64" if get.ARCH() == "x86_64" else "-mtune=generic -march=i686"
@@ -47,19 +49,26 @@ def setup():
     shelltools.makedirs("build")
     shelltools.cd("build")
     options = "--prefix=/usr \
-               --libdir=/usr/lib \
+               --sysconfdir=/etc \
+               --localstatedir=/var \
+               --with-headers=/usr/include \
                --mandir=/usr/share/man \
                --infodir=/usr/share/info \
                --libexecdir=/usr/lib/misc \
                --with-bugurl=https://bugs.pisilinux.org \
+               --with-elf \
                --enable-add-ons \
-               --enable-kernel=3.2.0 \
-               --enable-static-pie \
-               --enable-bind-now --disable-profile \
-               --enable-stackguard-randomization \
+               --enable-bind-now \
                --enable-lock-elision \
+               --enable-kernel=3.2   \
                --enable-multi-arch \
-               --disable-werror"
+               --enable-stack-protector=strong \
+               --enable-stackguard-randomization \
+               --enable-static-pie \
+               --disable-profile \
+               --disable-werror \
+               libc_cv_slibdir=/lib"
+
     if get.buildTYPE() == "emul32":
         options += "\
                     --libdir=/usr/lib32 \

@@ -39,6 +39,7 @@
             <!-- Fix paths in 64bit -->
             <Patch level="1">pisilinux/64.patch</Patch>
             <Patch level="1">pisilinux/gcc_47_based-record_gcc_options.patch</Patch>
+            <Patch level="1">pisilinux/0030-isl-0.20.patch</Patch>
         </Patches>
     </Source>
 
@@ -148,7 +149,7 @@
 
     <History>
         <Update release="1">
-            <Date>2018-08-25</Date>
+            <Date>2018-08-28</Date>
             <Version>7.3.0</Version>
             <Comment>First release</Comment>
             <Name>Ertuğrul Erata</Name>
