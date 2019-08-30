@@ -15,9 +15,9 @@
         <IsA>library</IsA>
         <Summary>The GNU Compiler Collection, includes C, C++, Objective-C and Fortran compilers</Summary>
         <Description>The GNU Compiler Collection includes front ends for C, C++, Objective-C, Fortran, as well as libraries for these languages</Description>
-        <Archive sha1sum="9689b9cae7b2886fdaa08449a26701f095c04e48" type="tarxz">http://ftp.gnu.org/gnu/gcc/gcc-7.3.0/gcc-7.3.0.tar.xz</Archive>
+        <Archive sha1sum="19926bdb6c4b58891015929853d41aeff019d400" type="tarxz">http://ftp.gnu.org/gnu/gcc/gcc-8.2.0/gcc-8.2.0.tar.xz</Archive>
         <BuildDependencies>
-            <Dependency versionFrom="2.30">binutils</Dependency>
+            <Dependency versionFrom="2.32">binutils</Dependency>
             <Dependency>bison</Dependency>
             <Dependency>gettext</Dependency>
             <Dependency>ncurses</Dependency>
@@ -149,8 +149,8 @@
 
     <History>
         <Update release="1">
-            <Date>2018-08-28</Date>
-            <Version>7.3.0</Version>
+            <Date>2018-08-30</Date>
+            <Version>8.2.0</Version>
             <Comment>First release</Comment>
             <Name>Ertuğrul Erata</Name>
             <Email>ertugrulerata@gmail.com</Email>
