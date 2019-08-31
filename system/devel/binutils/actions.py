@@ -26,11 +26,13 @@ def setup():
                          --enable-ld=default \
                          --enable-gold \
                          --enable-plugins \
+                         --disable-gdb \
                          --with-pkgversion="Pisi Linux" \
                          --with-bugurl=http://bugs.pisilinux.org/ \
                          %s \
                          --with-pic \
                          --disable-nls \
+                         --with-system-zlib \
                          --disable-werror' % (get.HOST(), multilib))
                          #--enable-targets="i386-linux" \
 
@@ -45,39 +47,8 @@ def build():
 def install():
     autotools.rawInstall("DESTDIR=%s tooldir=/usr" % get.installDIR())
 
-    # Rebuild libbfd.a and libiberty.a with -fPIC
-    #pisitools.remove("/usr/lib/libbfd.a")
-    #pisitools.remove("/usr/lib/libiberty.a")
-    # pisitools.remove("/usr/include/libiberty.h")
-
-    autotools.make("-C libiberty clean")
-    autotools.make('CFLAGS="-fPIC %s" -C libiberty' % get.CFLAGS())
-
-    autotools.make("-C bfd clean")
-    autotools.make('CFLAGS="-fPIC %s" -C bfd' % get.CFLAGS())
-
-    pisitools.insinto("/usr/lib", "bfd/libbfd.a")
-    pisitools.insinto("/usr/lib", "libiberty/libiberty.a")
-    pisitools.insinto("/usr/include", "include/libiberty.h")
-    pisitools.insinto("/usr/include", "include/demangle.h")
-
-    # Copy plugin-api.h file to build LLVM with LLVM gold plugin
-    pisitools.insinto("/usr/include", "include/plugin-api.h")
-
-    # Prevent programs to link against libbfd and libopcodes dynamically,
-    # they are changing far too often
-    pisitools.remove("/usr/lib/libopcodes.so")
-    pisitools.remove("/usr/lib/libbfd.so")
-
-    # Remove libtool files, which reference the .so libs
-    pisitools.remove("/usr/lib/libopcodes.la")
-    pisitools.remove("/usr/lib/libbfd.la")
-
     # Remove unneded man , info
     unneeded_man={"dlltool.1","windres.1","windmc.1"}
     for i in unneeded_man:
         pisitools.remove("/usr/share/man/man1/%s" %i)
-
-    #pisitools.remove("/usr/share/info/configure.info")
-    #pisitools.remove("/usr/share/info/standards.info")
 

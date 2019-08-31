@@ -69,12 +69,12 @@ def setup():
                        --includedir=/usr/include \
                        --mandir=/usr/share/man \
                        --infodir=/usr/share/info \
-                       --with-bugurl=http://bugs.pisilinux.org \
                        --enable-languages=c,c++,fortran,lto,objc,obj-c++ \
                        --disable-libgcj \
                        --enable-shared \
                        --enable-threads=posix \
                        --with-system-zlib \
+                       --with-isl \
                        --enable-__cxa_atexit \
                        --disable-libunwind-exceptions \
                        --enable-clocale=gnu \
@@ -82,14 +82,16 @@ def setup():
                        --disable-libssp \
                        --enable-gnu-unique-object \
                        --enable-linker-build-id \
-                       --enable-cloog-backend=isl \
                        --disable-cloog-version-check \
                        --enable-lto \
                        --enable-plugin \
                        --with-linker-hash-style=gnu \
                        --with-pkgversion="Pisi Linux" \
+                       --with-bugurl=http://bugs.pisilinux.org \
                        --disable-werror \
                        --enable-checking=release \
+                       --enable-default-pie \
+                       --enable-default-ssp \
                        --build=%s \
                                %s \
                                %s ' % ( verMajor , get.HOST(), opt_arch, opt_multilib))
