@@ -11,7 +11,7 @@ from pisi.actionsapi import get
 
 import os
 
-WorkDir = "glibc-2.29"
+WorkDir = "glibc-%s" %get.srcVERSION()
 
 arch = "x86-64" if get.ARCH() == "x86_64" and not get.buildTYPE() == "emul32" else "i686"
 
@@ -49,6 +49,7 @@ def setup():
     shelltools.makedirs("build")
     shelltools.cd("build")
     options = "--prefix=/usr \
+               --libdir=/usr/lib \
                --sysconfdir=/etc \
                --localstatedir=/var \
                --with-headers=/usr/include \
@@ -58,14 +59,14 @@ def setup():
                --with-bugurl=https://bugs.pisilinux.org \
                --with-elf \
                --enable-add-ons \
-               --enable-bind-now \
-               --enable-lock-elision \
-               --enable-kernel=3.2   \
-               --enable-multi-arch \
-               --enable-stack-protector=strong \
-               --enable-stackguard-randomization \
+               --enable-kernel=3.2.0 \
                --enable-static-pie \
+               --enable-bind-now \
                --disable-profile \
+               --enable-stackguard-randomization \
+               --enable-stack-protector=strong \
+               --enable-lock-elision \
+               --enable-multi-arch \
                --disable-werror \
                libc_cv_slibdir=/lib"
 
