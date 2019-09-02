@@ -5,6 +5,9 @@ import grp
 import pwd
 import shutil
 
+import locale
+locale.setlocale(locale.LC_ALL, 'en_US.UTF-8')
+
 import libuser
 
 ### Helper methods
