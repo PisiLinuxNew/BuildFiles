@@ -53,7 +53,7 @@ def setConf(key, value=None):
 
 def listLanguages():
     languages = []
-    for code, info in LANGUAGES.iteritems():
+    for code, info in LANGUAGES.items():
         languages.append((code, str(info.name)))
     return languages
 
