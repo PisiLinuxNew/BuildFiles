@@ -20,7 +20,12 @@ def setup():
     #shelltools.export("LD_SYMBOLIC_FUNCTIONS", "1")
     shelltools.system('sed -i "/ac_cpp=/s/\$CPPFLAGS/\$CPPFLAGS -O2/" libiberty/configure')
 
-    autotools.configure('--enable-shared \
+    shelltools.makedirs("build")
+    shelltools.cd("build")
+
+    shelltools.system('../configure \
+                         --prefix=/usr \
+                         --enable-shared \
                          --build=%s \
                          --enable-threads \
                          --enable-ld=default \
@@ -37,7 +42,9 @@ def setup():
                          #--enable-targets="i386-linux" \
 
 def build():
-    autotools.make("configure-host")
+    # autotools.make("configure-host")
+    shelltools.cd("build")
+
     autotools.make()
 
 # check fails because of LD_LIBRARY_PATH
@@ -45,6 +52,8 @@ def build():
 #    autotools.make("check -j1")
 
 def install():
+    shelltools.cd("build")
+
     autotools.rawInstall("DESTDIR=%s tooldir=/usr" % get.installDIR())
 
     # Remove unneded man , info
