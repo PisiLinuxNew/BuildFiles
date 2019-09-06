@@ -21,6 +21,9 @@ def check():
 def install():
     autotools.rawInstall("DESTDIR=%s" % get.installDIR())
 
+    pisitools.rename("/usr/bin/yacc", "yacc.bison")
+    pisitools.rename("/usr/share/man/man1/yacc.1", "yacc.bison.1")
+
     #pisitools.removeDir("/usr/lib/")
 
     pisitools.dodoc("AUTHORS", "NEWS", "ChangeLog", "README", "COPYING")
