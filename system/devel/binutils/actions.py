@@ -9,8 +9,6 @@ from pisi.actionsapi import pisitools
 from pisi.actionsapi import shelltools
 from pisi.actionsapi import get
 
-# linker = "gold"
-linker = "ld"
 multilib = "--enable-multilib" if get.ARCH() == "x86_64" else ""
 
 # WorkDir = "binutils-2.20.51"

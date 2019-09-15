@@ -66,43 +66,28 @@ def setup():
 
     shelltools.system('../configure \
                        --prefix=/usr \
-                       --bindir=/usr/bin \
-                       --libdir=/usr/lib \
-                       --libexecdir=/usr/lib \
-                       --includedir=/usr/include \
-                       --mandir=/usr/share/man \
-                       --infodir=/usr/share/info \
-                       --with-bugurl=http://bugs.pisilinux.org \
-                       --enable-languages=c,c++,fortran,lto,objc,obj-c++ \
-                       --disable-libgcj \
-                       --enable-shared \
-                       --enable-threads=posix \
-                       --with-system-zlib \
-                       --enable-__cxa_atexit \
-                       --disable-libunwind-exceptions \
-                       --enable-clocale=gnu \
-                       --disable-libstdcxx-pch \
+                       --with-glibc-version=2.11 \
+                       --with-newlib \
+                       --without-headers \
+                       --with-native-system-header-dir=/usr/include \
+                       --disable-nls  \
+                       --disable-shared  \
+                       --disable-multilib \
+                       --disable-decimal-float \
+                       --disable-threads \
+                       --disable-libatomic   \
+                       --disable-libgomp    \
+                       --disable-libquadmath \
                        --disable-libssp \
-                       --enable-gnu-unique-object \
-                       --enable-linker-build-id \
-                       --enable-cloog-backend=isl \
-                       --disable-cloog-version-check \
-                       --enable-lto \
-                       --enable-plugin \
-                       --with-linker-hash-style=gnu \
-                       --with-pkgversion="Pisi Linux" \
-                       --disable-werror \
-                       --enable-checking=release \
-                       --build=%s \
-                               %s \
-                               %s ' % ( get.HOST(), opt_arch, opt_multilib))
+                       --disable-libvtv \
+                       --enable-languages=c,c++ ')
 
 def build():
     exportFlags()
 
     shelltools.cd("build")
-    autotools.make('BOOT_CFLAGS="%s" profiledbootstrap' % cflags)
-
+    autotools.make()
+    
 def install():
     shelltools.cd("build")
     autotools.rawInstall("DESTDIR=%s" % get.installDIR())
