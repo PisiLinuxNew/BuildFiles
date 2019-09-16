@@ -13,7 +13,7 @@
         <IsA>app:console</IsA>
         <Summary>PISI is the package management system of Pisi Linux</Summary>
         <Description>PISI is a modern package management system implemented in Python. Some of its main features are: package sources are written in XML and python, implements all functions through a simple-to-use API, integrates low-level and high-level package management features.</Description>
-        <Archive sha1sum="b0a3de8b6242d408cf128a29f04b0e7526994c7b" type="targz">https://github.com/ertugerata/pisi/archive/3.0a1.tar.gz</Archive>
+        <Archive sha1sum="01d4465a072efeaf32d641af5789add8db3f0909" type="targz">https://github.com/ertugerata/pisi/archive/3.0a1.tar.gz</Archive>
         <AdditionalFiles>
             <AdditionalFile permission="0644" target="pisi.conf-i686">pisi.conf-i686</AdditionalFile>
             <AdditionalFile permission="0644" target="pisi.conf-x86_64">pisi.conf-x86_64</AdditionalFile>
@@ -66,10 +66,10 @@
             <AdditionalFile owner="root" permission="0644" target="/etc/pisi/mirrors.conf">mirrors.conf</AdditionalFile>
             <AdditionalFile owner="root" permission="0644" target="/etc/pisi/sandbox.conf">sandbox.conf</AdditionalFile>
             <AdditionalFile owner="root" permission="0644" target="/usr/share/mime/packages/pisi.xml">pisi.xml</AdditionalFile>
-            <AdditionalFile owner="root" permission="0644" target="/usr/lib/python3.6/site-packages/pisi/actionsapi/pkgconfig.py">pkgconfig.py</AdditionalFile>
             <AdditionalFile target="/usr/lib/tmpfiles.d/pisi.conf" permission="0644" owner="root">tmpfiles.conf</AdditionalFile>
+            <!--AdditionalFile owner="root" permission="0644" target="/usr/lib/python3.6/site-packages/pisi/actionsapi/pkgconfig.py">pkgconfig.py</AdditionalFile>
             <AdditionalFile owner="root" permission="0644" target="/usr/lib/python3.6/site-packages/pisi/actionsapi/qt5.py">qt5.py</AdditionalFile>
-            <AdditionalFile owner="root" permission="0644" target="/usr/lib/python3.6/site-packages/pisi/actionsapi/kde5.py">kde5.py</AdditionalFile>
+            <AdditionalFile owner="root" permission="0644" target="/usr/lib/python3.6/site-packages/pisi/actionsapi/kde5.py">kde5.py</AdditionalFile-->
         </AdditionalFiles>
         <Provides>
             <COMAR script="package.py">System.Package</COMAR>
@@ -79,7 +79,7 @@
 
     <History>
         <Update release="1">
-            <Date>2019-01-27</Date>
+            <Date>2019-09-16</Date>
             <Version>3.0_pre1</Version>
             <Comment>First release</Comment>
             <Name>Ertuğrul Erata</Name>
