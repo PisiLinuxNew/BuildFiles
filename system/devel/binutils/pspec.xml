@@ -1,4 +1,3 @@
-
 <!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
 <PISI>
     <Source>
@@ -13,9 +12,6 @@
         <Summary>Assembler and linker tools</Summary>
         <Description>Contains commands like as, ld, nm, objdump, ar, ranlib for compiling assembly code to the machine language, and for linking and manipulating the binary object files.</Description>
         <Archive sha1sum="33d807f7fa680b00439eb5560acd0c2ef645e5f9" type="tarbz2">http://ftp.gnu.org/gnu/binutils/binutils-2.30.tar.bz2</Archive>
-        <BuildDependencies>
-            <Dependency>zlib-devel</Dependency>
-        </BuildDependencies>
         <Patches>
         </Patches>
     </Source>
@@ -36,9 +32,9 @@
 
     <History>
         <Update release="1">
-            <Date>2019-08-25</Date>
+            <Date>2019-09-24</Date>
             <Version>2.30</Version>
-            <Comment>First release</Comment>
+            <Comment>First release.</Comment>
             <Name>Ertuğrul Erata</Name>
             <Email>ertugrulerata@gmail.com</Email>
         </Update>

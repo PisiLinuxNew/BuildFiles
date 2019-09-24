@@ -45,6 +45,8 @@ def exportFlags():
     # shelltools.export("LDFLAGS", "")
 
     # FIXME: this may not be necessary for biarch
+    shelltools.export("SHELL", "/bin/sh")
+
     shelltools.export("CC", "gcc")
     shelltools.export("CXX", "g++")
     shelltools.export("LC_ALL", "en_US.UTF-8")
@@ -52,16 +54,20 @@ def exportFlags():
 def setup():
     exportFlags()
     # Maintainer mode off, do not force recreation of generated files
-    #shelltools.system("contrib/gcc_update --touch")
+    # shelltools.system("contrib/gcc_update --touch")
     pisitools.dosed("gcc/Makefile.in", "\.\/fixinc\.sh", "-c true")
     pisitools.dosed("gcc/configure", "^(ac_cpp='\$CPP\s\$CPPFLAGS)", r"\1 -O2")
     pisitools.dosed("libiberty/configure", "^(ac_cpp='\$CPP\s\$CPPFLAGS)", r"\1 -O2")
 
-    shelltools.cd("../")
+
+    shelltools.move("isl-0.21", "isl")
+    shelltools.move("mpfr-4.0.2", "mpfr")
+    shelltools.move("mpc-1.1.0", "mpc")
+
     shelltools.makedirs("build")
     shelltools.cd("build")
 
-    shelltools.system('.././gcc-%s/configure \
+    shelltools.system('../configure \
                        --prefix=/usr \
                        --bindir=/usr/bin \
                        --libdir=/usr/lib \
@@ -97,13 +103,12 @@ def setup():
 def build():
     exportFlags()
 
-    shelltools.cd("../build")
+    shelltools.cd("build")
     autotools.make('BOOT_CFLAGS="%s" profiledbootstrap' % cflags)
 
 def install():
-    shelltools.cd("../build")
+    shelltools.cd("build")
     autotools.rawInstall("DESTDIR=%s" % get.installDIR())
-    #autotools.install()
 
     for header in ["limits.h","syslimits.h"]:
         pisitools.insinto("/usr/lib/gcc/%s/%s/include" % (get.HOST(), verMajor) , "gcc/include-fixed/%s" % header)
@@ -139,4 +144,3 @@ def install():
 
     if arch == "x86-64":
         pisitools.remove("/usr/lib32/libstdc++*gdb.py*")
-
